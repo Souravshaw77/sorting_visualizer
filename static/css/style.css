@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: #020617;
+    color: #e5e7eb;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+/* Controls */
+
+.controls {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.controls label {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    text-align: left;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+/* Layout */
+
+.comparison-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.panel {
+    width: 420px;
+}
+
+/* Visualization */
+
+.lane-container {
+    width: 100%;
+    min-height: 300px;
+    border: 1px solid #1e293b;
+    padding: 10px;
+    background: #020617;
+}
+
+.lane {
+    height: 16px;
+    margin: 4px 0;
+    background: #38bdf8;
+    border-radius: 4px;
+    transition: width 0.2s ease, background-color 0.2s ease;
+}
+
+.lane.compare {
+    background: #f87171;
+}
+
+.lane.swap {
+    background: #facc15;
+}
+
+/* Complexity */
+
+.complexity-box {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: 1px solid #1e293b;
+    background: #020617;
+    font-size: 13px;
+    text-align: left;
+}
+
+.complexity-box p {
+    margin: 4px 0;
+}
+
+/* Stats */
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-box {
+    border: 1px solid #1e293b;
+    padding: 10px 20px;
+    background: #020617;
+    min-width: 220px;
+    text-align: left;
+}
+
+/* Big-O Overlay */
+
+.overlay {
+    position: relative;
+    height: 14px;
+    margin-top: 6px;
+    border: 1px solid #1e293b;
+    background: #020617;
+}
+
+.actual {
+    position: absolute;
+    height: 100%;
+    background: #38bdf8;
+    left: 0;
+}
+
+.expected {
+    position: absolute;
+    height: 100%;
+    border-right: 2px dashed #f87171;
+    top: 0;
+}

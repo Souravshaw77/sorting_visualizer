@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sorting Algorithm Comparison Visualizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<h1>Sorting Algorithm Comparison Visualizer</h1>
+
+<div class="controls">
+    <label>
+        Algorithm A
+        <select id="algorithmA">
+            <option value="bubble">Bubble Sort</option>
+            <option value="selection">Selection Sort</option>
+            <option value="insertion">Insertion Sort</option>
+            <option value="merge">Merge Sort</option>
+            <option value="quick">Quick Sort</option>
+            <option value="heap">Heap Sort</option>
+        </select>
+    </label>
+
+    <label>
+        Algorithm B
+        <select id="algorithmB">
+            <option value="quick">Quick Sort</option>
+            <option value="merge">Merge Sort</option>
+            <option value="heap">Heap Sort</option>
+            <option value="bubble">Bubble Sort</option>
+            <option value="selection">Selection Sort</option>
+            <option value="insertion">Insertion Sort</option>
+        </select>
+    </label>
+
+    <label>
+        Size
+        <input type="range" id="size" min="10" max="80" value="30">
+    </label>
+
+    <label>
+        Speed
+        <input type="range" id="speed" min="10" max="200" value="60">
+    </label>
+
+    <button id="generate">Generate Array</button>
+    <button id="start">Compare</button>
+</div>
+
+<div class="comparison-wrapper">
+    <div class="panel">
+        <h3>Algorithm A</h3>
+        <div class="lane-container" id="containerA"></div>
+        <div class="complexity-box" id="complexityA"></div>
+    </div>
+
+    <div class="panel">
+        <h3>Algorithm B</h3>
+        <div class="lane-container" id="containerB"></div>
+        <div class="complexity-box" id="complexityB"></div>
+    </div>
+</div>
+
+<div class="stats">
+    <div class="stat-box">
+        <h4>Algorithm A Stats</h4>
+        <p id="compA">Comparisons: 0</p>
+        <p id="swapA">Swaps: 0</p>
+        <p id="stepsA">Total Steps: 0</p>
+
+        <div class="overlay">
+            <div class="actual" id="actualA"></div>
+            <div class="expected" id="expectedA"></div>
+        </div>
+    </div>
+
+    <div class="stat-box">
+        <h4>Algorithm B Stats</h4>
+        <p id="compB">Comparisons: 0</p>
+        <p id="swapB">Swaps: 0</p>
+        <p id="stepsB">Total Steps: 0</p>
+
+        <div class="overlay">
+            <div class="actual" id="actualB"></div>
+            <div class="expected" id="expectedB"></div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/visualizer.js') }}"></script>
+</body>
+</html>
